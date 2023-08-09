@@ -24,7 +24,7 @@ def display(figure):
     """ Display figure on stdout as sixel graphic """
     print()
     p = Popen(["convert", "-colors", '16', 'png:-', 'sixel:-'], stdin=PIPE)
-    figure.savefig(p.stdin, bbox_inches="tight", format='png', transparent=True, pad_inches=0.)
+    figure.savefig(p.stdin, bbox_inches="tight", format='png', transparent=False, pad_inches=0.)
     p.stdin.close()
     p.wait()
 
